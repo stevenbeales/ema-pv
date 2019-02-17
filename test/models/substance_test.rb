@@ -4,4 +4,8 @@ class SubstanceTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  test "should not save substance without name" do
+    substance = Substance.new
+    assert_not substance.save
+  end
 end
