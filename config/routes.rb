@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsDb::Engine => '/rails/db', at: '/', as: 'rails_db'
   resources :adverse_reactions
   resources :adverse_reaction_types
   resources :substances
