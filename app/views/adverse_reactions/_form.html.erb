@@ -1,0 +1,32 @@
+<%= form_with(model: adverse_reaction, local: true) do |form| %>
+  <% if adverse_reaction.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(adverse_reaction.errors.count, "error") %> prohibited this adverse_reaction from being saved:</h2>
+
+      <ul>
+      <% adverse_reaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.number_field :product_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :substance_id %>
+    <%= form.number_field :substance_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adverse_reaction_type_id %>
+    <%= form.number_field :adverse_reaction_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

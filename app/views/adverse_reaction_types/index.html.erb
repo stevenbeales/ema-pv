@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Adverse Reaction Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adverse_reaction_types.each do |adverse_reaction_type| %>
+      <tr>
+        <td><%= adverse_reaction_type.name %></td>
+        <td><%= link_to 'Show', adverse_reaction_type %></td>
+        <td><%= link_to 'Edit', edit_adverse_reaction_type_path(adverse_reaction_type) %></td>
+        <td><%= link_to 'Destroy', adverse_reaction_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adverse Reaction Type', new_adverse_reaction_type_path %>

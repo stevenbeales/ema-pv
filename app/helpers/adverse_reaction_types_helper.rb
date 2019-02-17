@@ -1,0 +1,2 @@
+module AdverseReactionTypesHelper
+end

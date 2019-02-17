@@ -1,0 +1,2 @@
+class AdverseReactionType < ApplicationRecord
+end

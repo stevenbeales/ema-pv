@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @adverse_reaction.product_id %>
+</p>
+
+<p>
+  <strong>Substance:</strong>
+  <%= @adverse_reaction.substance_id %>
+</p>
+
+<p>
+  <strong>Adverse reaction type:</strong>
+  <%= @adverse_reaction.adverse_reaction_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_adverse_reaction_path(@adverse_reaction) %> |
+<%= link_to 'Back', adverse_reactions_path %>
