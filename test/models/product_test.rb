@@ -8,4 +8,10 @@ class ProductTest < ActiveSupport::TestCase
     product = Product.new
     assert_not product.save
   end
+  
+  test "should save product with name" do
+    product = Product.new
+    product.name = 'My Product'
+    assert product.save
+  end
 end

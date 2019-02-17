@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
 # Add rails db database front end
 gem 'rails_db', '~> 2.0.6'
+# Add Excel support to rails_db
+gem 'axlsx_rails', '~> 0.5.2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -58,6 +60,3 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

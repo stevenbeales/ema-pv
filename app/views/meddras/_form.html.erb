@@ -1,0 +1,27 @@
+<%= form_with(model: meddra, local: true) do |form| %>
+  <% if meddra.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meddra.errors.count, "error") %> prohibited this meddra from being saved:</h2>
+
+      <ul>
+      <% meddra.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :preferred_term %>
+    <%= form.text_field :preferred_term %>
+  </div>
+
+  <div class="field">
+    <%= form.label :preferred_term_code %>
+    <%= form.text_field :preferred_term_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Meddras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Preferred term</th>
+      <th>Preferred term code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meddras.each do |meddra| %>
+      <tr>
+        <td><%= meddra.preferred_term %></td>
+        <td><%= meddra.preferred_term_code %></td>
+        <td><%= link_to 'Show', meddra %></td>
+        <td><%= link_to 'Edit', edit_meddra_path(meddra) %></td>
+        <td><%= link_to 'Destroy', meddra, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meddra', new_meddra_path %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Preferred term:</strong>
+  <%= @meddra.preferred_term %>
+</p>
+
+<p>
+  <strong>Preferred term code:</strong>
+  <%= @meddra.preferred_term_code %>
+</p>
+
+<%= link_to 'Edit', edit_meddra_path(@meddra) %> |
+<%= link_to 'Back', meddras_path %>

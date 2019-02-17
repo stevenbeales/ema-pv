@@ -8,4 +8,10 @@ class SubstanceTest < ActiveSupport::TestCase
     substance = Substance.new
     assert_not substance.save
   end
+  
+  test "should save substance with name" do
+    substance = Substance.new
+    substance.name = 'My Substance'
+    assert substance.save
+  end
 end

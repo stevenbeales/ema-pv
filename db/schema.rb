@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_16_230016) do
+ActiveRecord::Schema.define(version: 2019_02_17_191304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,10 +29,39 @@ ActiveRecord::Schema.define(version: 2019_02_16_230016) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "meddras", force: :cascade do |t|
+    t.string "preferred_term"
+    t.string "preferred_term_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rawdata", id: false, force: :cascade do |t|
+    t.text "product"
+    t.text "substance"
+    t.text "date_most_recent_spc"
+    t.text "adr"
+    t.text "soc"
+    t.text "hlgt"
+    t.text "hlt"
+    t.text "llt"
+    t.text "meddra_pt"
+    t.text "pt_code"
+    t.text "soc_code"
+    t.text "age_group"
+    t.text "gender"
+    t.text "causality"
+    t.text "frequency"
+    t.text "class_warning"
+    t.text "clinical_trials"
+    t.text "post_marketing"
+    t.text "comment"
   end
 
   create_table "substances", force: :cascade do |t|
