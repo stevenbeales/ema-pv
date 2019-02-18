@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :system_organ_classes
   resources :meddras
   mount RailsDb::Engine => '/', as: 'rails_db'
   resources :adverse_reactions

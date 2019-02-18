@@ -1,0 +1,22 @@
+<%= form_with(model: system_organ_class, local: true) do |form| %>
+  <% if system_organ_class.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(system_organ_class.errors.count, "error") %> prohibited this system_organ_class from being saved:</h2>
+
+      <ul>
+      <% system_organ_class.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :soc_code %>
+    <%= form.text_field :soc_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

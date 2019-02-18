@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>System Organ Classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Soc code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @system_organ_classes.each do |system_organ_class| %>
+      <tr>
+        <td><%= system_organ_class.soc_code %></td>
+        <td><%= link_to 'Show', system_organ_class %></td>
+        <td><%= link_to 'Edit', edit_system_organ_class_path(system_organ_class) %></td>
+        <td><%= link_to 'Destroy', system_organ_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New System Organ Class', new_system_organ_class_path %>

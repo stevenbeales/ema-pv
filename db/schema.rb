@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_17_191304) do
+ActiveRecord::Schema.define(version: 2019_02_18_043855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_02_17_191304) do
     t.integer "adverse_reaction_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "meddra_id"
+    t.integer "system_organ_class_id"
   end
 
   create_table "meddras", force: :cascade do |t|
@@ -66,6 +68,12 @@ ActiveRecord::Schema.define(version: 2019_02_17_191304) do
 
   create_table "substances", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "system_organ_classes", force: :cascade do |t|
+    t.string "soc_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
