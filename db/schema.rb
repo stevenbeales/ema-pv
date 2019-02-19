@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_19_024900) do
+ActiveRecord::Schema.define(version: 2019_02_19_041146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 2019_02_19_024900) do
     t.integer "class_warning_id"
     t.integer "post_marketing_id"
     t.integer "clinical_trial_id"
+    t.integer "high_group_level_term_id"
+    t.integer "high_level_term_id"
+    t.integer "low_level_term_id"
   end
 
   create_table "age_groups", force: :cascade do |t|
@@ -69,6 +72,24 @@ ActiveRecord::Schema.define(version: 2019_02_19_024900) do
   end
 
   create_table "genders", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "high_level_group_terms", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "high_level_terms", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "low_level_terms", force: :cascade do |t|
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -125,6 +146,7 @@ ActiveRecord::Schema.define(version: 2019_02_19_024900) do
     t.string "soc_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "soc"
   end
 
 end

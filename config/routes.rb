@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :low_level_terms
+  resources :high_level_terms
+  resources :high_level_group_terms
   resources :clinical_trials
   resources :post_marketings
   resources :class_warnings

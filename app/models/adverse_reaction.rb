@@ -11,4 +11,7 @@ class AdverseReaction < ApplicationRecord
   belongs_to :gender
   belongs_to :post_marketing
   belongs_to :clinical_trial
+  belongs_to :high_level_group_term
+  belongs_to :high_level_term
+  belongs_to :low_level_term
 end

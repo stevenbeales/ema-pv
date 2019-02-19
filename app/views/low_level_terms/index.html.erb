@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Low Level Terms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @low_level_terms.each do |low_level_term| %>
+      <tr>
+        <td><%= low_level_term.code %></td>
+        <td><%= link_to 'Show', low_level_term %></td>
+        <td><%= link_to 'Edit', edit_low_level_term_path(low_level_term) %></td>
+        <td><%= link_to 'Destroy', low_level_term, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Low Level Term', new_low_level_term_path %>

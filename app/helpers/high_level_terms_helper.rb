@@ -1,0 +1,2 @@
+module HighLevelTermsHelper
+end
