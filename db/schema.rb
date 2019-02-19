@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_043855) do
+ActiveRecord::Schema.define(version: 2019_02_19_024900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,60 @@ ActiveRecord::Schema.define(version: 2019_02_18_043855) do
     t.datetime "updated_at", null: false
     t.integer "meddra_id"
     t.integer "system_organ_class_id"
+    t.date "date_most_recent_spc"
+    t.string "comments"
+    t.integer "causality_id"
+    t.integer "frequency_id"
+    t.integer "class_warning_id"
+    t.integer "post_marketing_id"
+    t.integer "clinical_trial_id"
+  end
+
+  create_table "age_groups", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "causalities", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "class_warnings", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clinical_trials", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "frequencies", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genders", force: :cascade do |t|
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "meddras", force: :cascade do |t|
     t.string "preferred_term"
     t.string "preferred_term_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_marketings", force: :cascade do |t|
+    t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

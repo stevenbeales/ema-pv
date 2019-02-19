@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Causalities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @causalities.each do |causality| %>
+      <tr>
+        <td><%= causality.code %></td>
+        <td><%= link_to 'Show', causality %></td>
+        <td><%= link_to 'Edit', edit_causality_path(causality) %></td>
+        <td><%= link_to 'Destroy', causality, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Causality', new_causality_path %>

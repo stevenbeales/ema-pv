@@ -1,0 +1,22 @@
+<%= form_with(model: post_marketing, local: true) do |form| %>
+  <% if post_marketing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post_marketing.errors.count, "error") %> prohibited this post_marketing from being saved:</h2>
+
+      <ul>
+      <% post_marketing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :code %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

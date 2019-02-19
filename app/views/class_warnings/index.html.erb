@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Class Warnings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @class_warnings.each do |class_warning| %>
+      <tr>
+        <td><%= class_warning.code %></td>
+        <td><%= link_to 'Show', class_warning %></td>
+        <td><%= link_to 'Edit', edit_class_warning_path(class_warning) %></td>
+        <td><%= link_to 'Destroy', class_warning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Class Warning', new_class_warning_path %>
