@@ -3,4 +3,5 @@ class Meddra < ApplicationRecord
   validates_associated :adverse_reactions
   validates :preferred_term, presence: true
   validates :preferred_term_code, presence: :true
+  validates_uniqueness_of :preferred_term
 end
